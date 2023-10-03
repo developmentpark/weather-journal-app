@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node -r dotenv/config src/index.js",
     "build-dev": "parcel",
-    "build-prod": "parcel build"
+    "build-prod": "parcel build --dist-dir dist"
   },
   "keywords": [],
   "author": "",

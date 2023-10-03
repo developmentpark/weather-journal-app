@@ -2,10 +2,11 @@
   "name": "weather-diary",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "source": "website/index.html",
   "scripts": {
     "start": "node -r dotenv/config src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-dev": "parcel",
+    "build-prod": "parcel build"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +16,9 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.9.3",
     "dotenv": "^16.3.1",
+    "parcel": "^2.9.3",
     "prettier": "3.0.3"
   }
 }

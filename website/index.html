@@ -7,7 +7,84 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Hello World</h1>
-    <script src="./js/index.js"></script>
+    <div class="search-box-container search-box-container_hidden">
+      <div id="search-box-overlay" class="overlay"></div>
+      <div class="search-box-content">
+        <input type="text" placeholder="Type here" />
+        <button id="search">search</button>
+      </div>
+    </div>
+    <div class="container">
+      <header>Weather Journal App</header>
+      <aside class="aside-container aside-container_hidden">
+        <div id="aside-overlay" class="overlay"></div>
+        <div class="aside-content">
+          <button id="aside-closer" class="aside-btn_opener">
+            close aside
+          </button>
+          <ul class="posts-list">
+            <li class="post">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+              quaerat, molestiae repellat suscipit in cumque corrupti, eveniet
+              officiis, atque culpa ducimus. Labore nostrum quisquam sit magni
+              laudantium officia maiores atque.
+            </li>
+            <li class="post">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Reiciendis sequi assumenda mollitia dolores atque quam alias cum
+              non pariatur aut, facilis voluptates totam quasi hic a dicta
+              ducimus fuga magnam?
+            </li>
+          </ul>
+        </div>
+      </aside>
+      <main>
+        <button id="aside-opener" class="aside-btn_closer">open aside</button>
+        <button id="search-box-opener">open search</button>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam dolore,
+        sint ab porro officia commodi labore omnis minus voluptas officiis
+        molestiae amet adipisci mollitia at voluptatibus quis culpa eaque
+        excepturi?
+      </main>
+      <footer>@2023</footer>
+
+      <script>
+        const aside = document.querySelector(".aside-container");
+        const asideOpener = document.querySelector("#aside-opener");
+        asideOpener.addEventListener("click", () => {
+          console.log("open");
+          aside.classList.remove("aside-container_hidden");
+        });
+
+        const asideCloser = document.querySelector("#aside-closer");
+        asideCloser.addEventListener("click", () => {
+          console.log("close");
+          aside.classList.add("aside-container_hidden");
+        });
+
+        const asideOverlay = document.querySelector("#aside-overlay");
+        asideOverlay.addEventListener("click", () => {
+          aside.classList.add("aside-container_hidden");
+        });
+
+        /* search box */
+        const searchBox = document.querySelector(".search-box-container");
+        const searchOpener = document.querySelector("#search-box-opener");
+        searchOpener.addEventListener("click", () => {
+          console.log("open search");
+          searchBox.classList.remove("search-box-container_hidden");
+        });
+
+        const searchOverlay = document.querySelector("#search-box-overlay");
+        searchOverlay.addEventListener("click", () => {
+          searchBox.classList.add("search-box-container_hidden");
+        });
+
+        const searchBtn = document.querySelector("#search");
+        searchBtn.addEventListener("click", () => {
+          searchBox.classList.add("search-box-container_hidden");
+        });
+      </script>
+    </div>
   </body>
 </html>

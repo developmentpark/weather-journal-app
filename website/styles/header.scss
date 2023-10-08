@@ -1,0 +1,16 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $gray-color_2;
+
+  .logo {
+    color: $gray-color_7;
+    font-variant-caps: all-small-caps;
+  }
+
+  .aside-btn_opener {
+    position: absolute;
+    left: 10px;
+  }
+}

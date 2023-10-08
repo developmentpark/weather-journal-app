@@ -29,21 +29,86 @@
       <aside class="aside-container aside-container_hidden">
         <div id="aside-overlay" class="overlay"></div>
         <div class="aside-content">
-          <button id="aside-closer" class="aside-btn_closer">
-            close aside
+          <button
+            id="aside-closer"
+            class="aside-btn_closer button button_secondary"
+          >
+            <svg class="icon icon_primary">
+              <use xlink:href="./svg/icons.svg#bars"></use>
+            </svg>
           </button>
           <ul class="posts-list">
             <li class="post">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-              quaerat, molestiae repellat suscipit in cumque corrupti, eveniet
-              officiis, atque culpa ducimus. Labore nostrum quisquam sit magni
-              laudantium officia maiores atque.
+              <div class="post__icon-container">
+                <img
+                  class="post__icon"
+                  src="https://openweathermap.org/img/wn/02d@2x.png"
+                />
+              </div>
+              <div class="post__content">
+                <div class="post__header">
+                  <div class="city-date-container">
+                    <div class="city-container">
+                      <svg class="icon icon_primary">
+                        <use xlink:href="./svg/icons.svg#location"></use>
+                      </svg>
+                      <span class="city">Springfield</span>
+                    </div>
+                    <div class="date-container">
+                      <svg class="icon icon_secondary icon_mini">
+                        <use xlink:href="./svg/icons.svg#clock"></use>
+                      </svg>
+                      <span class="date">Friday, 05:36</span>
+                    </div>
+                  </div>
+                  <div class="temp-container">
+                    <div class="temp-value">26</div>
+                    <div class="temp-unit">°C</div>
+                  </div>
+                </div>
+                <p class="post__feeling">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim
+                  omnis reiciendis laboriosam ea dolore! Molestiae neque, quidem
+                  illo, voluptates facere, quam at blanditiis iure error aperiam
+                  alias veniam quasi obcaecati.
+                </p>
+              </div>
             </li>
             <li class="post">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Reiciendis sequi assumenda mollitia dolores atque quam alias cum
-              non pariatur aut, facilis voluptates totam quasi hic a dicta
-              ducimus fuga magnam?
+              <div class="post__icon-container">
+                <img
+                  class="post__icon"
+                  src="https://openweathermap.org/img/wn/02d@2x.png"
+                />
+              </div>
+              <div class="post__content">
+                <div class="post__header">
+                  <div class="city-date-container">
+                    <div class="city-container">
+                      <svg class="icon icon_primary">
+                        <use xlink:href="./svg/icons.svg#location"></use>
+                      </svg>
+                      <span class="city">Detroit</span>
+                    </div>
+                    <div class="date-container">
+                      <svg class="icon icon_secondary icon_mini">
+                        <use xlink:href="./svg/icons.svg#clock"></use>
+                      </svg>
+                      <span class="date">Friday, 05:36</span>
+                    </div>
+                  </div>
+                  <div class="temp-container">
+                    <div class="temp-value">26</div>
+                    <div class="temp-unit">°C</div>
+                  </div>
+                </div>
+                <p class="post__feeling">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim
+                  omnis reiciendis laboriosam ea dolore! Molestiae neque, quidem
+                  illo, voluptates facere, quam at blanditiis iure error aperiam
+                  alias veniam quasi obcaecati.
+                </p>
+              </div>
             </li>
           </ul>
         </div>

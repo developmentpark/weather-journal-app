@@ -1,0 +1,25 @@
+.aside-btn_closer {
+  position: relative;
+  left: 10px;
+  top: 8px;
+  margin-bottom: 1rem;
+}
+
+.aside-content {
+  background-color: $gray-color_1;
+}
+
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1rem;
+  overflow: scroll;
+  height: calc(100% - 2.8rem);
+}
+
+@media (min-width: 800px) {
+  .posts-list {
+    height: 100%;
+  }
+}

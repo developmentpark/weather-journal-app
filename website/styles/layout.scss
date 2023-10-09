@@ -8,6 +8,8 @@ body {
 .container {
   width: 100vw;
   height: 100vh;
+  min-height: 600px;
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 40px auto 25px;
@@ -27,6 +29,8 @@ body {
 
 .aside-container {
   position: absolute;
+  z-index: 1;
+  height: 100%;
 }
 
 .aside-content {
@@ -34,7 +38,7 @@ body {
   top: 0;
   left: 0;
   width: 400px;
-  height: 100vh;
+  height: 100%;
 }
 
 .aside-container_hidden {
@@ -51,14 +55,16 @@ body {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: rgba($color: $gray-color_1, $alpha: 0.5);
 }
 
 /* search box */
 .search-box-container {
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  height: 100vh;
+  min-height: 600px;
+  z-index: 2;
 }
 
 .search-box-content {

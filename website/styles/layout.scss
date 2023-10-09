@@ -81,7 +81,7 @@ body {
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: $breakpoint) {
   .aside-container {
     .overlay {
       display: none;

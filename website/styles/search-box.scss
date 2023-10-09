@@ -19,7 +19,7 @@
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: $breakpoint) {
   .search-box {
     width: 600px;
     margin-left: 50vw;

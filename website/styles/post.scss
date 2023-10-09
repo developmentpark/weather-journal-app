@@ -6,20 +6,37 @@
   border-radius: 10px;
   padding: 1rem;
   transition: background-color 200ms ease-in;
-  box-shadow: 0 1px 3px 0 $gray-color_3;
+  justify-content: end;
 
   &:hover {
     cursor: pointer;
     background-color: $gray-color_3;
+    box-shadow: 0 1px 3px 0 $gray-color_3;
+
+    .post__icon-container {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 10ms 200ms ease-in;
+    }
+
+    .post__content {
+      width: 80%;
+
+      .post__feeling {
+        max-width: 260px;
+      }
+    }
   }
 
   .post__icon-container {
-    border-radius: 100%;
-    border: solid 1px $gray-color_3;
     width: 60px;
     height: 60px;
     flex-shrink: 0;
     flex-grow: 0;
+    position: absolute;
+    left: 1.8rem;
+    visibility: hidden;
+    opacity: 0;
 
     .post__icon {
       width: 100%;
@@ -27,6 +44,7 @@
   }
 
   .post__content {
+    width: 100%;
     color: $gray-color_7;
     border-radius: 10px;
     display: flex;
@@ -34,6 +52,7 @@
     gap: 4px;
     line-height: 20px;
     font-size: 14px;
+    transition: width 200ms ease-out;
   }
 }
 
@@ -49,7 +68,7 @@
     overflow: hidden;
     overflow-wrap: break-word;
     text-overflow: ellipsis;
-    max-width: 260px;
+    max-width: 100%;
   }
 }
 

@@ -39,6 +39,7 @@ body {
   left: 0;
   width: 400px;
   height: 100%;
+  transition: left 200ms ease-out;
 }
 
 .aside-container_hidden {
@@ -69,6 +70,9 @@ body {
 
 .search-box-content {
   position: absolute;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 200ms ease-in-out;
 }
 
 .search-box-container_hidden {
@@ -77,7 +81,8 @@ body {
   }
 
   .search-box-content {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
   }
 }
 

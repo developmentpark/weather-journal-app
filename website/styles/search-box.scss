@@ -1,0 +1,28 @@
+.search-box {
+  width: 90vw;
+  translate: 5vw 6rem;
+  background-color: $gray-color_2;
+  padding: 1rem;
+  box-shadow: 0 2px 8px 0 $gray-color_1;
+  border-radius: 10px;
+  display: flex;
+
+  .search-box__input {
+    width: 100%;
+    height: 34px;
+  }
+
+  .search-box__button {
+    height: 34px;
+    position: absolute;
+    right: 15px;
+  }
+}
+
+@media (min-width: 800px) {
+  .search-box {
+    width: 600px;
+    margin-left: 50vw;
+    translate: -300px 6rem;
+  }
+}

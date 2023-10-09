@@ -9,9 +9,17 @@
   <body>
     <div class="search-box-container search-box-container_hidden">
       <div id="search-box-overlay" class="overlay"></div>
-      <div class="search-box-content">
-        <input type="text" placeholder="Type here" />
-        <button id="search">search</button>
+      <div class="search-box-content search-box">
+        <input
+          class="search-box__input input"
+          type="text"
+          placeholder="Enter zip code here"
+        />
+        <button id="search" class="search-box__button button button_secondary">
+          <svg class="icon icon_primary">
+            <use xlink:href="./svg/icons.svg#search"></use>
+          </svg>
+        </button>
       </div>
     </div>
     <div class="container">

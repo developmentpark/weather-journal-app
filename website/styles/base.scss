@@ -8,3 +8,21 @@ $gray-color_4: #aaa59e;
 $gray-color_5: #d0cbc2;
 $gray-color_6: #dfdbd5;
 $gray-color_7: #f4f2ee;
+
+.textarea,
+.input {
+  background-color: $gray-color_3;
+  color: $gray-color_7;
+  padding: 0.6rem;
+  border-radius: 10px;
+  border: none;
+
+  &::placeholder {
+    opacity: 1;
+    color: $gray-color_4;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}

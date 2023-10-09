@@ -114,11 +114,54 @@
         </div>
       </aside>
       <main>
-        <button id="search-box-opener">open search</button>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam dolore,
-        sint ab porro officia commodi labore omnis minus voluptas officiis
-        molestiae amet adipisci mollitia at voluptatibus quis culpa eaque
-        excepturi?
+        <div class="card">
+          <button id="search-box-opener" class="button button_secondary">
+            Search by zip code
+          </button>
+
+          <div class="weather">
+            <div class="weather__header">
+              <img
+                class="weather__image"
+                src="https://openweathermap.org/img/wn/04d@2x.png"
+              />
+              <div class="weather__temp">
+                <div class="weather__temp-value">22</div>
+                <div class="weather__temp-unit">ºC</div>
+              </div>
+            </div>
+            <div class="weather__body">
+              <p class="weather__humidity">
+                Humidity: <span class="weather__humidity-value">72%</span>
+              </p>
+              <p class="weather__wind-speed">
+                Wind: at <span class="weather__wind-speed-value">14km/h</span>
+              </p>
+            </div>
+            <div class="weather__footer">
+              <div class="weather__city">
+                <svg class="icon icon_primary">
+                  <use xlink:href="./svg/icons.svg#location"></use>
+                </svg>
+                <span class="weather__city-value">Austin</span>
+              </div>
+              <p class="weather__desc">Moderate rain</p>
+            </div>
+          </div>
+
+          <div class="box-feeling">
+            <textarea
+              class="box-feeling__text-area textarea"
+              placeholder="Enter your feelings here"
+            ></textarea>
+            <button
+              id="publish"
+              class="box-feeling__publish-btn button button_primary"
+            >
+              Publish
+            </button>
+          </div>
+        </div>
       </main>
       <footer>@2023</footer>
 

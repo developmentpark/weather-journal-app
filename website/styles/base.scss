@@ -26,3 +26,12 @@ $gray-color_7: #f4f2ee;
     outline: 0;
   }
 }
+
+a {
+  text-decoration: none;
+  color: $primary-color_1;
+
+  &:hover {
+    color: $primary-color_2;
+  }
+}

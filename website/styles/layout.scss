@@ -10,7 +10,7 @@ body {
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: 40px auto 40px;
+  grid-template-rows: 40px auto 25px;
 
   header {
     grid-area: 1/1/2/3;

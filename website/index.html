@@ -7,7 +7,186 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Hello World</h1>
-    <script src="./js/index.js"></script>
+    <div class="search-box-container search-box-container_hidden">
+      <div id="search-box-overlay" class="overlay"></div>
+      <div class="search-box-content search-box">
+        <input
+          class="search-box__input input"
+          type="text"
+          placeholder="Enter zip code here"
+        />
+        <button id="search" class="search-box__button button button_secondary">
+          <svg class="icon icon_primary">
+            <use xlink:href="./svg/icons.svg#search"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="container">
+      <header>
+        <button
+          id="aside-opener"
+          class="aside-btn_opener button button_secondary"
+        >
+          <svg class="icon icon_primary">
+            <use xlink:href="./svg/icons.svg#bars"></use>
+          </svg>
+        </button>
+        <div class="logo">Weather Journal App</div>
+      </header>
+      <aside class="aside-container aside-container_hidden">
+        <div id="aside-overlay" class="overlay"></div>
+        <div class="aside-content">
+          <button
+            id="aside-closer"
+            class="aside-btn_closer button button_secondary"
+          >
+            <svg class="icon icon_primary">
+              <use xlink:href="./svg/icons.svg#bars"></use>
+            </svg>
+          </button>
+          <ul class="posts-list">
+            <li class="post">
+              <div class="post__icon-container">
+                <img
+                  class="post__icon"
+                  src="https://openweathermap.org/img/wn/02d@2x.png"
+                />
+              </div>
+              <div class="post__content">
+                <div class="post__header">
+                  <div class="city-date-container">
+                    <div class="city-container">
+                      <svg class="icon icon_primary">
+                        <use xlink:href="./svg/icons.svg#location"></use>
+                      </svg>
+                      <span class="city">Springfield</span>
+                    </div>
+                    <div class="date-container">
+                      <svg class="icon icon_secondary icon_mini">
+                        <use xlink:href="./svg/icons.svg#clock"></use>
+                      </svg>
+                      <span class="date">Friday, 05:36</span>
+                    </div>
+                  </div>
+                  <div class="temp-container">
+                    <div class="temp-value">26</div>
+                    <div class="temp-unit">°C</div>
+                  </div>
+                </div>
+                <p class="post__feeling">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim
+                  omnis reiciendis laboriosam ea dolore! Molestiae neque, quidem
+                  illo, voluptates facere, quam at blanditiis iure error aperiam
+                  alias veniam quasi obcaecati.
+                </p>
+              </div>
+            </li>
+            <li class="post">
+              <div class="post__icon-container">
+                <img
+                  class="post__icon"
+                  src="https://openweathermap.org/img/wn/02d@2x.png"
+                />
+              </div>
+              <div class="post__content">
+                <div class="post__header">
+                  <div class="city-date-container">
+                    <div class="city-container">
+                      <svg class="icon icon_primary">
+                        <use xlink:href="./svg/icons.svg#location"></use>
+                      </svg>
+                      <span class="city">Detroit</span>
+                    </div>
+                    <div class="date-container">
+                      <svg class="icon icon_secondary icon_mini">
+                        <use xlink:href="./svg/icons.svg#clock"></use>
+                      </svg>
+                      <span class="date">Friday, 05:36</span>
+                    </div>
+                  </div>
+                  <div class="temp-container">
+                    <div class="temp-value">26</div>
+                    <div class="temp-unit">°C</div>
+                  </div>
+                </div>
+                <p class="post__feeling">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim
+                  omnis reiciendis laboriosam ea dolore! Molestiae neque, quidem
+                  illo, voluptates facere, quam at blanditiis iure error aperiam
+                  alias veniam quasi obcaecati.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </aside>
+      <main>
+        <div class="card">
+          <button id="search-box-opener" class="button button_secondary">
+            Search by zip code
+          </button>
+
+          <div class="weather">
+            <div class="weather__header">
+              <img
+                class="weather__image"
+                src="https://openweathermap.org/img/wn/04d@2x.png"
+              />
+              <div class="weather__temp">
+                <div class="weather__temp-value">22</div>
+                <div class="weather__temp-unit">ºC</div>
+              </div>
+            </div>
+            <div class="weather__body">
+              <p class="weather__humidity">
+                Humidity: <span class="weather__humidity-value">72%</span>
+              </p>
+              <p class="weather__wind-speed">
+                Wind: at <span class="weather__wind-speed-value">14km/h</span>
+              </p>
+            </div>
+            <div class="weather__footer">
+              <div class="weather__city">
+                <svg class="icon icon_primary">
+                  <use xlink:href="./svg/icons.svg#location"></use>
+                </svg>
+                <span class="weather__city-value">Austin</span>
+              </div>
+              <p class="weather__desc">Moderate rain</p>
+            </div>
+          </div>
+
+          <div class="box-feeling">
+            <textarea
+              class="box-feeling__text-area textarea"
+              placeholder="Enter your feelings here"
+            ></textarea>
+            <button
+              id="publish"
+              class="box-feeling__publish-btn button button_primary"
+            >
+              Publish
+            </button>
+          </div>
+        </div>
+      </main>
+      <footer>
+        Made with
+        <svg class="icon icon_primary icon_mini">
+          <use xlink:href="./svg/icons.svg#heart"></use>
+        </svg>
+        by
+        <a
+          href="https://github.com/developmentpark"
+          rel="noopener"
+          target="_blank"
+          >developmentpark</a
+        >
+      </footer>
+      <script src="./js/index.js"></script>
+      <script src="./js/aside.js"></script>
+      <script src="./js/search-box.js"></script>
+    </div>
   </body>
 </html>

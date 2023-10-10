@@ -1,5 +1,70 @@
-$pink: rgb(252, 165, 252);
+@import "./base.scss";
+@import "./layout.scss";
+@import "./header.scss";
+@import "./aside.scss";
+@import "./post.scss";
+@import "./main.scss";
+@import "./card.scss";
+@import "./footer.scss";
+@import "./search-box.scss";
 
-h1 {
-  background-color: $pink;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  user-select: none;
+}
+
+.button {
+  border-radius: 10px;
+  border: none;
+  color: $gray-color_6;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.button_primary {
+    background-color: $primary-color_1;
+    width: 120px;
+    height: 32px;
+
+    &:hover {
+      background-color: $primary-color_2;
+      color: $gray-color_7;
+    }
+  }
+
+  &.button_secondary {
+    background-color: transparent;
+    width: fit-content;
+    padding: 0.2rem 0.6rem;
+    color: $primary-color_1;
+
+    &:hover {
+      background-color: $gray-color_1;
+    }
+  }
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+
+  &.icon_primary {
+    fill: $primary-color_1;
+  }
+
+  &.icon_secondary {
+    fill: $gray-color_5;
+  }
+
+  &.icon_mini {
+    width: 10px;
+    height: 10px;
+  }
 }

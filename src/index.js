@@ -1,8 +1,7 @@
-const express = require("express");
-const api = require("./api");
-const morgan = require("morgan");
-const cors = require("cors");
-
+import express from "express";
+import { router as api } from "./api/index.js";
+import morgan from "morgan";
+import cors from "cors";
 const app = express();
 
 app.use(express.static("dist"));

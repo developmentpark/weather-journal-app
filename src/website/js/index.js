@@ -1,23 +1,12 @@
 import geolocationService from "./geolocationService.js";
-import httpService from "./httpServiceFake.js";
+import httpService from "../../utils/httpService.js";
+import { objectToQuery } from "../../utils/query.js";
 
-function objectToQuery(object) {
-  return Object.entries(object).reduce((acum, curr, idx, arr) => {
-    acum += `${curr[0]}=${curr[1]}`;
-    if (idx < arr.length - 1) {
-      acum += "&";
-    }
-    return acum;
-  }, "?");
-}
-
-const API = "http://localhost:34343/api";
+const API = "http://localhost:9999/api";
 
 function getWeather(coords) {
   const path = "/weather";
   const query = objectToQuery(coords);
-  const url = API + path + query;
-  console.log(url);
   return httpService.get(API + path + query);
 }
 

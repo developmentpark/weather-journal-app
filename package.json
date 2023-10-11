@@ -3,9 +3,9 @@
   "name": "weather-diary",
   "version": "1.0.0",
   "description": "",
-  "source": "website/index.html",
+  "source": "src/website/index.html",
   "scripts": {
-    "start": "node -r dotenv/config src/index.js",
+    "start": "node -r dotenv/config src/server/index.js",
     "build-dev": "parcel",
     "build-prod": "parcel build --dist-dir dist"
   },

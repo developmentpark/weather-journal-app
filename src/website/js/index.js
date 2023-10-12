@@ -78,4 +78,27 @@ function weatherView(weather) {
     `;
 }
 
+async function publish() {
+  const city = getEl("weather__city-value").textContent;
+  const temp = getEl("weather__temp-value").textContent;
+  const humidity = getEl("weather__humidity-value").textContent;
+  const windSpeed = getEl("weather__wind-speed-value").textContent;
+  const feeling = getEl("box-feeling__text-area").value;
+  const description = getEl("weather__desc").textContent;
+  const icon = getEl("weather__image").src;
+  const entity = {
+    city,
+    temp,
+    humidity,
+    windSpeed,
+    feeling,
+    description,
+    icon,
+  };
+  const res = await httpService.post(API, entity);
+  console.log(res);
+}
+
+getEl("box-feeling__publish-btn").addEventListener("click", publish);
+
 document.addEventListener("DOMContentLoaded", init);

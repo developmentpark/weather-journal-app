@@ -101,9 +101,15 @@ function saveEntity(entity) {
   return httpService.post(API, entity);
 }
 
+function getAllEntities() {
+  return httpService.get(API);
+}
+
 async function publish() {
   const entity = getCurrentEntity();
-  saveEntity(entity).then((res) => console.log(res));
+  saveEntity(entity)
+    .then(() => getAllEntities())
+    .then((entities) => console.log(entities));
 }
 
 getEl("box-feeling__publish-btn").addEventListener("click", publish);

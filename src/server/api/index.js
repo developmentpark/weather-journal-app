@@ -29,7 +29,8 @@ router.post("/", (req, res) => {
 });
 
 router.get("/", (req, res) => {
-  res.json({ message: "Hello World" });
+  const data = projectData.getAll();
+  res.json(data);
 });
 
 export { router };

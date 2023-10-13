@@ -1,6 +1,9 @@
 import geolocationService from "./geolocationService.js";
 import httpService from "../../utils/httpService.js";
 import { objectToQuery } from "../../utils/query.js";
+import { renderWeatherView } from "./weatherView.js";
+import { renderListView } from "./listView.js";
+import { getEl } from "../utils/dom.js";
 
 const API = "http://localhost:9999/api";
 
@@ -8,6 +11,41 @@ function getWeather(coords) {
   const path = "/weather";
   const query = objectToQuery(coords);
   return httpService.get(API + path + query);
+}
+
+function saveEntity(entity) {
+  return httpService.post(API, entity);
+}
+
+function getAllEntities() {
+  return httpService.get(API);
+}
+
+function getCurrentEntity() {
+  const city = getEl("weather__city-value").textContent;
+  const temp = getEl("weather__temp-value").textContent;
+  const humidity = getEl("weather__humidity-value").textContent;
+  const windSpeed = getEl("weather__wind-speed-value").textContent;
+  const feeling = getEl("box-feeling__text-area").value;
+  const description = getEl("weather__desc").textContent;
+  const icon = getEl("weather__image").src;
+  return {
+    city,
+    temp,
+    humidity,
+    windSpeed,
+    feeling,
+    description,
+    icon,
+  };
+}
+
+async function publish() {
+  const entity = getCurrentEntity();
+  saveEntity(entity)
+    .then(() => getAllEntities())
+    .then((entities) => renderListView(entities))
+    .catch((error) => console.log(error.message));
 }
 
 function init() {
@@ -18,87 +56,7 @@ function init() {
     .catch((error) => console.log(error.message));
 }
 
-function getEl(className) {
-  return document.querySelector("." + className);
-}
-
-const mpsToKmph = (mps) => 3.6 * mps;
-
-const kelvinToCelcius = (kelvin) => kelvin - 272.15;
-
-function renderWeatherView(weather) {
-  const tempInCelsius = kelvinToCelcius(weather.main.temp);
-  const windSpeedInKmph = mpsToKmph(weather.wind.speed);
-  getEl("weather").outerHTML = weatherView({
-    ...weather,
-    temp: tempInCelsius,
-    wind: {
-      speed: windSpeedInKmph,
-    },
-  });
-}
-
-function weatherView(weather) {
-  return `
-    <div class="weather">
-      <div class="weather__header">
-        <img
-          class="weather__image"
-          src="https://openweathermap.org/img/wn/${
-            weather.weather[0].icon
-          }@2x.png"
-        />
-        <div class="weather__temp">
-          <div class="weather__temp-value">${Math.round(weather.temp)}</div>
-          <div class="weather__temp-unit">ºC</div>
-        </div>
-      </div>
-      <div class="weather__body">
-        <p class="weather__humidity">
-          Humidity: <span class="weather__humidity-value">${
-            weather.main.humidity
-          }%</span>
-        </p>
-        <p class="weather__wind-speed">
-          Wind: at <span class="weather__wind-speed-value">${Math.round(
-            weather.wind.speed,
-          )}km/h</span>
-        </p>
-      </div>
-      <div class="weather__footer">
-        <div class="weather__city">
-          <svg class="icon icon_primary">
-            <use xlink:href="./svg/icons.svg#location"></use>
-          </svg>
-          <span class="weather__city-value">${weather.name}</span>
-        </div>
-        <p class="weather__desc">${weather.weather[0].description}</p>
-      </div>
-    </div>
-    `;
-}
-
-async function publish() {
-  const city = getEl("weather__city-value").textContent;
-  const temp = getEl("weather__temp-value").textContent;
-  const humidity = getEl("weather__humidity-value").textContent;
-  const windSpeed = getEl("weather__wind-speed-value").textContent;
-  const feeling = getEl("box-feeling__text-area").value;
-  const description = getEl("weather__desc").textContent;
-  const icon = getEl("weather__image").src;
-  const entity = {
-    city,
-    temp,
-    humidity,
-    windSpeed,
-    feeling,
-    description,
-    icon,
-  };
-  const res = await httpService.post(API, entity);
-  console.log(res);
-}
-
-getEl("box-feeling__publish-btn").addEventListener("click", publish);
-
-document.addEventListener("DOMContentLoaded", init);
+document.addEventListener("DOMContentLoaded", () => {
+  init();
+  getEl("box-feeling__publish-btn").addEventListener("click", publish);
+});

@@ -15,4 +15,7 @@ export default {
   add: function (item) {
     projectData.push(item);
   },
+  getAll: function () {
+    return [...projectData];
+  },
 };

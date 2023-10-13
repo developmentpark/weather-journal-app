@@ -1,6 +1,7 @@
 import express from "express";
 import httpService from "../../utils/httpService.js";
 import { objectToQuery } from "../../utils/query.js";
+import projectData from "./data.js";
 
 const router = express.Router();
 
@@ -18,6 +19,13 @@ router.get("/weather", async (req, res) => {
   } catch (error) {
     console.log("error: ", error);
   }
+});
+
+router.post("/", (req, res) => {
+  const data = req.body;
+  const item = { ...data, date: Date.now() };
+  projectData.add(item);
+  res.status(200).json(item);
 });
 
 router.get("/", (req, res) => {

@@ -2,6 +2,7 @@ import geolocationService from "./geolocationService.js";
 import httpService from "../../utils/httpService.js";
 import { objectToQuery } from "../../utils/query.js";
 import { renderWeatherView } from "./weatherView.js";
+import { renderListView } from "./listView.js";
 import { getEl } from "../utils/dom.js";
 
 const API = "http://localhost:9999/api";
@@ -43,7 +44,8 @@ async function publish() {
   const entity = getCurrentEntity();
   saveEntity(entity)
     .then(() => getAllEntities())
-    .then((entities) => console.log(entities));
+    .then((entities) => renderListView(entities))
+    .catch((error) => console.log(error.message));
 }
 
 function init() {

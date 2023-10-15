@@ -7,6 +7,7 @@
   padding: 1rem;
   transition: background-color 200ms ease-in;
   justify-content: end;
+  position: relative;
 
   &:hover {
     cursor: pointer;
@@ -34,7 +35,7 @@
     flex-shrink: 0;
     flex-grow: 0;
     position: absolute;
-    left: 1.8rem;
+    left: 0.8rem;
     visibility: hidden;
     opacity: 0;
 

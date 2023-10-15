@@ -12,9 +12,9 @@
 .posts-list {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
-  padding: 1rem;
-  overflow: scroll;
+  gap: 0.5rem;
+  padding: 1rem 1.2rem;
+  overflow-y: scroll;
   height: calc(100% - 2.8rem);
 }
 

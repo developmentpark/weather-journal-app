@@ -4,7 +4,7 @@
   gap: 0.8rem;
   background-color: $gray-color_2;
   border-radius: 10px;
-  padding: 1rem;
+  padding: 1.6rem;
   transition: background-color 200ms ease-in;
   justify-content: end;
   position: relative;
@@ -50,7 +50,7 @@
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 0.4rem;
     line-height: 20px;
     font-size: 14px;
     transition: width 200ms ease-out;
@@ -77,10 +77,14 @@
   .city-date-container {
     display: flex;
     flex-direction: column;
+    gap: 0.8rem;
 
     .city-container {
       position: relative;
       left: -2px;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
     }
 
     .city {
@@ -101,13 +105,14 @@
     position: relative;
 
     .temp-value {
-      font-size: 20px;
+      font-size: 24px;
     }
     .temp-unit {
-      font-size: 10px;
+      font-size: 14px;
       font-weight: 600;
       position: relative;
-      top: -2px;
+      top: 0px;
+      line-height: 14px;
     }
   }
 }

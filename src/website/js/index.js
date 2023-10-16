@@ -49,6 +49,9 @@ async function publish() {
 }
 
 function init() {
+  getAllEntities()
+    .then((entities) => renderListView(entities))
+    .catch((error) => console.log(error.message));
   geolocationService
     .getCoords()
     .then((coords) => getWeather(coords))

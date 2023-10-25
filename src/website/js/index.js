@@ -62,4 +62,10 @@ function init() {
 document.addEventListener("DOMContentLoaded", () => {
   init();
   getEl("box-feeling__publish-btn").addEventListener("click", publish);
+  getEl("search-box__button").addEventListener("click", () => {
+    const zip = getEl("search-box__input").value;
+    getWeather({ zip })
+      .then((data) => renderWeatherView(data))
+      .catch((error) => console.log(error.message));
+  });
 });

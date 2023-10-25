@@ -5,7 +5,7 @@ import { renderWeatherView } from "./weatherView.js";
 import { renderListView } from "./listView.js";
 import { getEl } from "../utils/dom.js";
 
-const API = "http://localhost:9999/api";
+const API = process.env.API;
 
 function getWeather(coords) {
   const path = "/weather";

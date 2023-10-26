@@ -6,7 +6,7 @@
   "source": "src/website/index.html",
   "scripts": {
     "start": "node -r dotenv/config src/server/index.js",
-    "build-dev": "parcel",
+    "build-dev": "parcel --port 8080",
     "build-prod": "parcel build --dist-dir dist"
   },
   "keywords": [],

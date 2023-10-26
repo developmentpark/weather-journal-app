@@ -5,11 +5,11 @@ import { renderWeatherView } from "./weatherView.js";
 import { renderListView } from "./listView.js";
 import { getEl } from "../utils/dom.js";
 
-const API = "http://localhost:9999/api";
+const API = process.env.API;
 
-function getWeather(coords) {
+function getWeather(queryParams) {
   const path = "/weather";
-  const query = objectToQuery(coords);
+  const query = objectToQuery(queryParams);
   return httpService.get(API + path + query);
 }
 
@@ -62,4 +62,13 @@ function init() {
 document.addEventListener("DOMContentLoaded", () => {
   init();
   getEl("box-feeling__publish-btn").addEventListener("click", publish);
+  getEl("search-box__button").addEventListener("click", () => {
+    const zip = getEl("search-box__input").value;
+    const zipFormat = /^[0-9]{5}$/;
+    if (zipFormat.test(zip.trim())) {
+      getWeather({ zip })
+        .then((data) => renderWeatherView(data))
+        .catch((error) => console.log(error.message));
+    }
+  });
 });
